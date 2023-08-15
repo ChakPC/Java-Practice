@@ -20,8 +20,6 @@ package labs.pm.data;
 import java.math.BigDecimal;
 import static java.math.RoundingMode.HALF_UP;
 import java.time.LocalDate;
-import java.util.Objects;
-import static labs.pm.data.Rating.*;
 
 /**
  * (@code Product) This class handles all operations for a product
@@ -33,7 +31,7 @@ import static labs.pm.data.Rating.*;
  * @version 1.0
  * @author Purnadip Chakrabarti
  */
-public abstract class Product {
+public abstract class Product implements Rateable<Product>{
     private final int id;
     private final String name;
     private final BigDecimal price;
@@ -96,11 +94,12 @@ public abstract class Product {
         return price.multiply(DISCOUNT_RATE).setScale(2, HALF_UP);
     }
 
+    @Override
     public Rating getRating() {
         return rating;
     }
     
-    public abstract Product applyRating(Rating newRating);
+//    public abstract Product applyRating(Rating newRating);
     
     /**
      * Assumes that the best before date is today
