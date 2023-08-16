@@ -120,7 +120,7 @@ public abstract class Product implements Rateable<Product>{
         if (this == obj) return true;
         if (!(obj instanceof Product)) return false;
         final Product other = (Product) obj;
-        return ((id==other.id) && name.equals(other.name));
+        return (id==other.id);
     }
     
     @Override
