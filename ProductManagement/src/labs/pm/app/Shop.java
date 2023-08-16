@@ -19,9 +19,8 @@ package labs.pm.app;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.Locale;
-import labs.pm.data.Drink;
-import labs.pm.data.Food;
 import labs.pm.data.Product;
 import labs.pm.data.ProductManager;
 import static labs.pm.data.Rating.*;
@@ -42,7 +41,7 @@ public class Shop {
         ProductManager pm = new ProductManager(Locale.UK);
         
         pm.createProduct(101, "Tea", BigDecimal.valueOf(1.99), NOT_RATED);
-        pm.printProductReport(101);
+//        pm.printProductReport(101);
         
         pm.reviewProduct(101, FOUR_STAR, "Nice hot cup of tea!");
         pm.reviewProduct(101, TWO_STAR, "Rather weak tea!");
@@ -50,25 +49,37 @@ public class Shop {
         pm.reviewProduct(101, FOUR_STAR, "Good tea!");
         pm.reviewProduct(101, FIVE_STAR, "Perfect tea!");
         pm.reviewProduct(101, THREE_STAR, "Just add some lemon");
-        pm.printProductReport(101);
+//        pm.printProductReport(101);
         
         pm.createProduct(102, "Coffee", BigDecimal.valueOf(1.99), NOT_RATED);
         pm.reviewProduct(102, THREE_STAR, "Coffe was ok");
         pm.reviewProduct(102, ONE_STAR, "Where is the milk");
         pm.reviewProduct(102, FIVE_STAR, "Perfect with ten spoons of sugar!");
-        pm.printProductReport(102);
+//        pm.changeLocale("ru-RU");
+//        pm.printProductReport(102);
         
         pm.createProduct(103, "Cake", BigDecimal.valueOf(3.99), NOT_RATED, LocalDate.now().plusDays(2));
         pm.reviewProduct(103, FIVE_STAR, "Very nice cake");
         pm.reviewProduct(103, FOUR_STAR, "Expected more chocolate");
         pm.reviewProduct(103, FIVE_STAR, "Perfect cake!");
-        pm.printProductReport(103);
+//        pm.changeLocale("en-GB");
+//        pm.printProductReport(103);
 
         pm.createProduct(105, "Cookie", BigDecimal.valueOf(3.99), NOT_RATED, LocalDate.now());
         pm.reviewProduct(105, THREE_STAR, "Just another cookie");
         pm.reviewProduct(105, THREE_STAR, "ok!");
-        pm.printProductReport(105);
+//        pm.changeLocale("ru-RU");
+//        pm.printProductReport(105);
         
+        pm.printProducts((p1, p2) -> p2.getRating().ordinal() - p1.getRating().ordinal());
+        
+        pm.printProducts((p1, p2) -> p2.getPrice().compareTo(p1.getPrice()));
+        
+        Comparator<Product> ratingSorter = (p1, p2) -> p2.getRating().ordinal() - p1.getRating().ordinal();
+        Comparator<Product> priceSorter = (p1, p2) -> p2.getPrice().compareTo(p1.getPrice());
+        
+        pm.printProducts(ratingSorter.thenComparing(priceSorter));
+        pm.printProducts(priceSorter.thenComparing(ratingSorter));
         
 //        Product p5 = p3.applyRating(THREE_STAR);
 //        
