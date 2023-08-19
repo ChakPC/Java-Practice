@@ -40,41 +40,64 @@ public class Shop {
         
         ProductManager pm = new ProductManager(Locale.UK);
         
-        pm.createProduct(101, "Tea", BigDecimal.valueOf(1.99), NOT_RATED);
+//        pm.printProductReport(101);
+//        pm.printProductReport(105);
+        
+//        pm.dumpData();
+//        pm.restoreData();
+        
 //        pm.printProductReport(101);
         
-        pm.reviewProduct(101, FOUR_STAR, "Nice hot cup of tea!");
-        pm.reviewProduct(101, TWO_STAR, "Rather weak tea!");
-        pm.reviewProduct(101, FOUR_STAR, "Fine tea!");
-        pm.reviewProduct(101, FOUR_STAR, "Good tea!");
-        pm.reviewProduct(101, FIVE_STAR, "Perfect tea!");
-        pm.reviewProduct(101, THREE_STAR, "Just add some lemon");
+        
+//        pm.createProduct(101, "Tea", BigDecimal.valueOf(1.99), NOT_RATED);
+//        pm.parseProduct("D, 101, Tea, 1.99, 0, 2019-09-19");
+//        pm.printProductReport(101);
+//        pm.printProductReport(42);
+        
+//        pm.reviewProduct(42, FOUR_STAR, "Nice hot cup of tea!");
+//        pm.reviewProduct(101, FOUR_STAR, "Nice hot cup of tea!");
+//        pm.parseReview("101, 4, Nice hot cup of tea");
+        
+//        pm.parseReview("1014, Nice hot cup of tea");
+//        pm.parseReview("101, X, Nice hot cup of tea");
+        
+//        pm.reviewProduct(101, TWO_STAR, "Rather weak tea!");
+//        pm.parseReview("101, 2, Rather weak tea");
+//        pm.reviewProduct(101, FOUR_STAR, "Fine tea!");
+//        pm.parseReview("101, 4, Fine tea!");
+//        pm.reviewProduct(101, FOUR_STAR, "Good tea!");
+//        pm.parseReview("101, 4, Good tea!");
+//        pm.reviewProduct(101, FIVE_STAR, "Perfect tea!");
+//        pm.parseReview("101, 5, Perfect tea!");
+//        pm.reviewProduct(101, THREE_STAR, "Just add some lemon");
+//        pm.parseReview("101, 3, Just add some lemon"  );
 //        pm.printProductReport(101);
         
-        pm.createProduct(102, "Coffee", BigDecimal.valueOf(1.99), NOT_RATED);
-        pm.reviewProduct(102, THREE_STAR, "Coffe was ok");
-        pm.reviewProduct(102, ONE_STAR, "Where is the milk");
-        pm.reviewProduct(102, FIVE_STAR, "Perfect with ten spoons of sugar!");
+//        pm.createProduct(102, "Coffee", BigDecimal.valueOf(1.99), NOT_RATED);
+//        pm.reviewProduct(102, THREE_STAR, "Coffe was ok");
+//        pm.reviewProduct(102, ONE_STAR, "Where is the milk");
+//        pm.reviewProduct(102, FIVE_STAR, "Perfect with ten spoons of sugar!");
 //        pm.changeLocale("ru-RU");
 //        pm.printProductReport(102);
         
-        pm.createProduct(103, "Cake", BigDecimal.valueOf(3.99), NOT_RATED, LocalDate.now().plusDays(2));
-        pm.reviewProduct(103, FIVE_STAR, "Very nice cake");
-        pm.reviewProduct(103, FOUR_STAR, "Expected more chocolate");
-        pm.reviewProduct(103, FIVE_STAR, "Perfect cake!");
+//        pm.createProduct(103, "Cake", BigDecimal.valueOf(3.99), NOT_RATED, LocalDate.now().plusDays(2));
+//        pm.reviewProduct(103, FIVE_STAR, "Very nice cake");
+//        pm.reviewProduct(103, FOUR_STAR, "Expected more chocolate");
+//        pm.reviewProduct(103, FIVE_STAR, "Perfect cake!");
 //        pm.changeLocale("en-GB");
 //        pm.printProductReport(103);
 
-        pm.createProduct(105, "Cookie", BigDecimal.valueOf(3.99), NOT_RATED, LocalDate.now());
-        pm.reviewProduct(105, THREE_STAR, "Just another cookie");
-        pm.reviewProduct(105, THREE_STAR, "ok!");
+//        pm.createProduct(105, "Cookie", BigDecimal.valueOf(3.99), NOT_RATED, LocalDate.now());
+//        pm.reviewProduct(105, THREE_STAR, "Just another cookie");
+//        pm.reviewProduct(105, THREE_STAR, "ok!");
 //        pm.changeLocale("ru-RU");
-        pm.printProductReport(105);
+//        pm.printProductReport(105);
         
-        pm.getDiscounts().forEach((rating, discount) -> System.out.println(rating + "\t" + discount));
-        
-        pm.printProducts(p->p.getPrice().floatValue() < 2, 
-                        (p1, p2) -> p2.getRating().ordinal() - p1.getRating().ordinal());
+//        pm.getDiscounts().forEach((rating, discount) -> System.out.println(rating + "\t" + discount));
+//        
+//       
+//        pm.printProducts(p->p.getPrice().floatValue() < 2, 
+//                        (p1, p2) -> p2.getRating().ordinal() - p1.getRating().ordinal());
 //        
 //        pm.printProducts((p1, p2) -> p2.getPrice().compareTo(p1.getPrice()));
 //        

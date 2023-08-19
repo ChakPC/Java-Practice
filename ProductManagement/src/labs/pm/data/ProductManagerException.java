@@ -17,38 +17,20 @@
  */
 package labs.pm.data;
 
-import java.io.Serializable;
-
 /**
  *
  * @author purnadip_chakrabarti
  */
-public class Review implements Comparable<Review>, Serializable {
-    private Rating rating;
-    private String comments;
-
-    public Review(Rating rating, String comments) {
-        this.rating = rating;
-        this.comments = comments;
-    }
-
-    public Rating getRating() {
-        return rating;
-    }
-
-    public String getComments() {
-        return comments;
-    }
-
-    @Override
-    public String toString() {
-        return "Review{" + "rating=" + rating + ", comments=" + comments + '}';
-    }
-
-    @Override
-    public int compareTo(Review other) {
-        return other.rating.ordinal() - this.rating.ordinal();
+public class ProductManagerException extends Exception {
+    public ProductManagerException () {
+        super();
     }
     
+    public ProductManagerException (String message) {
+        super(message);
+    }
     
+    public ProductManagerException (String message, Throwable cause) {
+        super(message, cause);
+    }
 }
